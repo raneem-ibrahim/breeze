@@ -44,7 +44,7 @@
           <li><a href="{{url('aboutus')}}">من نحن </a></li>
           <li><a href="{{url('contact')}}">اتصل بنا </a></li>
           <li><a href="{{url('bloge')}}"> مدونة </a></li>
-          <li ><div class="dropdown ">
+          {{-- <li ><div class="dropdown ">
             <a class="btn btn-secondary dropdown-toggle droplist" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               الاعدادات
             </a>
@@ -54,7 +54,21 @@
               <li><a class="dropdown-item " href="#">Another action</a></li>
               <li><a class="dropdown-item " href="#">Something else here</a></li>
             </ul>
-          </div></li>
+          </div>
+        </li> --}}
+        <li>
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle droplist" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              الاعدادات
+            </a>
+          
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              {{-- @if (Route::has('login') && !auth()->check()) --}}
+                <li><a class="dropdown-item" href="{{ route('login') }}">تسجيل الدخول</a></li>
+              {{-- @endif --}}
+            </ul>
+          </div>
+        </li>
         </ul>
         <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
       </nav>

@@ -45,7 +45,8 @@
         </div>
     </form>
 </x-guest-layout> --}}
-<!DOCTYPE html>
+
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -416,5 +417,59 @@ signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
     </script>
+</body>
+</html> --}}
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form</title>
+  <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
+</head>
+<body>
+  <div class="wrapper">
+    <form method="POST" action="{{ route('login') }}">
+      @csrf
+      <div>
+        <img src="{{asset('image/Brown_Retro_Book_Store_Logo-removebg-preview.png')}}" width="100PX" height="100PX">
+      </div>
+      
+      <!-- Email Address -->
+      <div class="input-field">
+        <input type="email" name="email" value="{{ old('email') }}" required autofocus>
+        <label><h2>البريد الإلكتروني</h2></label>
+      </div>
+      @if ($errors->has('email'))
+        <p class="error">{{ $errors->first('email') }}</p>
+      @endif
+      
+      <!-- Password -->
+      <div class="input-field">
+        <input type="password" name="password" required>
+        <label><h2>كلمة المرور</h2></label>
+      </div>
+      @if ($errors->has('password'))
+        <p class="error">{{ $errors->first('password') }}</p>
+      @endif
+      
+      <!-- Remember Me & Forgot Password -->
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember" name="remember">
+          <p>تذكرني</p>
+        </label>
+        @if (Route::has('password.request'))
+          <a href="{{ route('password.request') }}">هل نسيت كلمة السر؟</a>
+        @endif
+      </div>
+      
+      <button type="submit">سجل الأن</button>
+    </form>
+  </div>
 </body>
 </html>

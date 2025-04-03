@@ -76,6 +76,27 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
       {{-- start section_about  --}}
       <div class="bodyabout">
         <section class="about-section">
@@ -104,6 +125,31 @@
       {{-- end section_about  --}}
 
       <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       {{-- start feedback_slider --}}
       <section class="container">
@@ -175,7 +221,7 @@
       {{-- end feedback_slider --}}
 
      <br><br>
-     
+
       <footer>
         <div class="footer-divider">
             <span class="footer-logo"><img src="{{asset('image/لوجو.png')}}" alt="الشعار" height="40"></span>

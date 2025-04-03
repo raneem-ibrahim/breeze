@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,9 @@ Route::get('/aboutus', function () {
 Route::get('/bloge', function () {
     return view('bloge');
 });
+
+
+Route::get('/student',[AdminController::class ,'student']);
 
 
 

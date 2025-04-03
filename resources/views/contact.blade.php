@@ -67,6 +67,23 @@
 
       <br><br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
       {{-- start contact --}}
       <div class="bodycontact">
         <section class="contact-section">
@@ -87,6 +104,23 @@
         </section>
       </div>
       {{-- end contact  --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <br><br>
       <footer>
         <div class="footer-divider">
