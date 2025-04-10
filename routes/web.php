@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
 
 
 
@@ -45,9 +37,22 @@ Route::get('/aboutus', function () {
 Route::get('/bloge', function () {
     return view('bloge');
 });
+Route::get('/dash', function () {
+    return view('dashboard.dash');
+});
+Route::get('/login', function () {
+    return view('login');
+});
 
 
-Route::get('/student',[AdminController::class ,'student']);
+
+
+Route::get('/student' , [AdminController::class , 'addstudent']);
+Route::post('/add-student', [AdminController::class, 'store']);
+Route::post('/contact', [AdminController::class, 'contact']);
+Route::get('/admin/contact/{id}', [AdminController::class, 'show'])->name('contact.show');
+
+
 
 
 

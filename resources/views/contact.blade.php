@@ -70,20 +70,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
       {{-- start contact --}}
       <div class="bodycontact">
         <section class="contact-section">
@@ -106,7 +92,83 @@
       {{-- end contact  --}}
 
 
+  {{-- start form contact us --}}
 
+  <div class="bodycontact2">
+    <div class="container3">
+      <div class="text_c">نموذج تواصل معنا</div>
+      @if(session('success'))
+  <div class="success-message">
+    {{ session('success') }}
+  </div>
+@endif
+      <form action="{{ url('contact') }}" method="POST">
+        @csrf
+        <div class="form-row">
+          <!-- حقل الاسم الكامل -->
+          <div class="input-data">
+            <div class="input-field">
+              <input type="text" name="full_name" required>
+              <div class="underline"></div>
+              <label>الاسم الكامل</label>
+            </div>
+          </div>
+  
+          <!-- حقل البريد الإلكتروني -->
+          <div class="input-data">
+            <div class="input-field">
+              <input type="email" name="email" required>
+              <div class="underline"></div>
+              <label>البريد الإلكتروني</label>
+            </div>
+          </div>
+        </div>
+  
+        <div class="form-row">
+          <!-- حقل رقم الهاتف -->
+          <div class="input-data">
+            <div class="input-field">
+              <input type="tel" name="phone" required>
+              <div class="underline"></div>
+              <label>رقم الهاتف</label>
+            </div>
+          </div>
+  
+          <!-- محتوى الرسالة حقل -->
+          <div class="input-data">
+            <div class="input-field">
+              <input type="text" name="message" required>
+              <div class="underline"></div>
+              <label>محتوى الرسالة </label>
+            </div>
+          </div>
+        </div>
+  
+        <!-- حقل محتوى الرسالة -->
+        {{-- <div class="input-data">
+          <div class="textarea-field">
+            <textarea required></textarea>
+            <div class="underline"></div>
+            <label>محتوى الرسالة</label>
+          </div>
+        </div> --}}
+  
+        <div class="submit-btn">
+          <div class="inner"></div>
+          <input type="submit" value="إرسال">
+        </div>
+  
+        <div class="contact-info">
+          <p>للتواصل مع خدمة العملاء: <strong>+001 345 6889</strong></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+</div>
+
+  {{-- end form contact us --}}
 
 
 
